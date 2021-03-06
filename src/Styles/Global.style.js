@@ -16,6 +16,15 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Syncopate','Noto Sans KR', sans-serif;
 		background-color: #F1EFED;
 	}
+
+	a {
+		text-decoration:none;
+		color:black;
+	}
+
+	li{
+		list-style:none;
+	}
 `;
 
 export default GlobalStyle;

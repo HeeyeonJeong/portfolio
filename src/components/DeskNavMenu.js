@@ -10,38 +10,46 @@ const NavBox = styled.div`
   margin-right: ${(props) => props.theme.marginM};
 `;
 
-const ListBox = styled.ul``;
-
 const List = styled.li`
   text-align: right;
+
   & + & {
-    margin-top: ${(props) => props.theme.marginM};
+    margin-top: ${(props) => props.theme.marginL};
   }
 `;
 
 const ListLink = styled.a`
+  display: inline-block;
+  min-height: 30px;
   font-size: ${(props) => props.theme.fontM};
+  margin: 0 ${(props) => props.theme.marginM};
 
-  :hover {
-    span {
-      opacity: 1;
-    }
+  :hover span {
+    display: inline-block;
+    animation: fadeIn 0.6s;
   }
 
   span {
-    transition: opacity 0.3s;
-    opacity: 0;
-    position: relative;
+    display: none;
     z-index: 10;
-    font-size: ${(props) => props.theme.fontL};
+    font-size: 23px;
     margin-right: ${(props) => props.theme.marginM};
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
 function DeskNavMenu() {
   return (
     <NavBox>
-      <ListBox>
+      <ul>
         <List>
           <ListLink href="#home" aria-label="home">
             <span>Home</span>
@@ -66,7 +74,7 @@ function DeskNavMenu() {
             <RiIcons.RiCheckboxBlankCircleFill />
           </ListLink>
         </List>
-      </ListBox>
+      </ul>
     </NavBox>
   );
 }

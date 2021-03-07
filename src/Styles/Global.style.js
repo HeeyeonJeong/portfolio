@@ -22,8 +22,13 @@ const GlobalStyle = createGlobalStyle`
 		color:black;
 	}
 
-	li{
+	li {
 		list-style:none;
+	}
+
+	button {
+		outline:none;
+		border:none;
 	}
 `;
 

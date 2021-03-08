@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         box-sizing: border-box;
 		font-family: 'Syncopate','Noto Sans KR', sans-serif;
-		background-color: #F1EFED;
 		background: ${({ theme }) => theme.bgColor};
 		color: ${({ theme }) => theme.textColor};
 		transition: all 0.25s linear;

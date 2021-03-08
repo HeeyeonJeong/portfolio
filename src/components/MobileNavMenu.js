@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as FiIcons from "react-icons/fi";
 import * as CgIcons from "react-icons/cg";
 import styled, { css } from "styled-components";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Icon = styled.button`
   position: relative;
@@ -16,7 +17,7 @@ const SlideBox = styled.div`
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: #f1efed;
+  background-color: ${(props) => props.mode};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,6 +55,7 @@ const List = styled.li`
 `;
 
 function MobileNavMenu() {
+  const { mode } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
 
   const openClick = () => setOpen(true);
@@ -66,7 +68,7 @@ function MobileNavMenu() {
       </Icon>
 
       {open && (
-        <SlideBox open={open}>
+        <SlideBox open={open} mode={mode.bgColor}>
           <CloseIcon open={open} onClick={closeClick}>
             <CgIcons.CgClose />
           </CloseIcon>

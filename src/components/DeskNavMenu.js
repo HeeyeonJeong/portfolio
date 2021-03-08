@@ -1,9 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import * as RiIcons from "react-icons/ri";
 
+const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+`;
+
 const NavBox = styled.div`
-  position: absolute;
+  position: fixed;
+  display: ${(props) => (props.isVisible === true ? "block" : "none")};
+  animation: ${fadeIn} 0.8s;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
@@ -26,7 +37,7 @@ const ListLink = styled.a`
 
   :hover span {
     display: inline-block;
-    animation: fadeIn 0.6s;
+    animation: ${fadeIn} 0.6s;
   }
 
   span {
@@ -35,20 +46,11 @@ const ListLink = styled.a`
     font-size: 23px;
     margin-right: ${(props) => props.theme.marginM};
   }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 `;
 
-function DeskNavMenu() {
+function DeskNavMenu({ isVisible }) {
   return (
-    <NavBox>
+    <NavBox isVisible={isVisible}>
       <ul>
         <List>
           <ListLink href="#home" aria-label="home">

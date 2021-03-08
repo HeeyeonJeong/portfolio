@@ -15,11 +15,14 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
 		font-family: 'Syncopate','Noto Sans KR', sans-serif;
 		background-color: #F1EFED;
+		background: ${({ theme }) => theme.bgColor};
+		color: ${({ theme }) => theme.textColor};
+		transition: all 0.25s linear;
 	}
 
 	a {
 		text-decoration:none;
-		color:black;
+		color: ${({ theme }) => theme.textColor};
 	}
 
 	li {
@@ -29,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
 	button {
 		outline:none;
 		border:none;
+		color: ${({ theme }) => theme.textColor};
 		background-color:transparent;
 	}
 `;

@@ -37,9 +37,22 @@ const marginSize = {
   marginXXL: "50px",
 };
 
+// color switch
+const lightTheme = {
+  bgColor: "#F1EFED",
+  textColor: "black",
+};
+
+const darkTheme = {
+  bgColor: "#181818",
+  textColor: "white",
+};
+
 export const theme = {
   ...viewSize,
   ...fontSize,
   ...paddingSize,
   ...marginSize,
+  lightTheme,
+  darkTheme,
 };

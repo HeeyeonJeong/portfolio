@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import MobileNavMenu from "./MobileNavMenu";
+import ToggleSwitch from "./ToggleSwitch";
 
-const HeaderBox = styled.div`
+const HeaderBox = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +34,9 @@ function Header() {
 
   return (
     <HeaderBox>
-      <SectionTitle>{isTabletDown ? <MobileNavMenu /> : "About"}</SectionTitle>
+      <SectionTitle>
+        {isTabletDown ? <MobileNavMenu /> : <ToggleSwitch />}
+      </SectionTitle>
       <Title>
         <a href="/">HY.</a>
       </Title>

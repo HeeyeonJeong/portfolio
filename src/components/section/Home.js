@@ -14,13 +14,14 @@ const Section = styled.section`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled.h2.attrs((props) => ({
+  style: {
+    transform: `translateX(-${props.offsetY > 50 ? props.offsetY * 1.5 : 0}px)`,
+  },
+}))`
   font-weight: 700;
   font-size: 40px;
   margin-bottom: 30px;
-  transform: translatex(
-    ${(props) => props.offsetY > 50 && props.offsetY * 1.5}px
-  );
   transition: all 500ms ease-out;
 
   @media ${(props) => props.theme.tabletMedium} {
@@ -30,54 +31,44 @@ const Title = styled.h2`
   }
 `;
 
-const TitleName = styled.h2`
-  font-weight: 700;
-  font-size: 40px;
-  margin-bottom: 30px;
+const TitleName = styled(Title).attrs((props) => ({
+  style: {
+    transform: `translateX(${props.offsetY > 180 ? props.offsetY * 1.5 : 0}px)`,
+  },
+}))`
   color: ${(props) => props.theme.pointColor};
-  transform: translatex(
-    -${(props) => props.offsetY > 130 && props.offsetY * 1.5}px
-  );
-  transition: all 500ms ease-out;
 
   @media ${(props) => props.theme.tabletMedium} {
-    font-size: 200px;
-    position: relative;
-    right: -10%;
+    left: 9%;
   }
 `;
 
-const DescTitle = styled.p`
+const Desc = styled.p.attrs((props) => ({
+  style: {
+    transform: `translateX(${props.offsetY > 420 ? props.offsetY * 1 : 0}px)`,
+  },
+}))`
   font-weight: 300;
   font-size: 30px;
-  color: ${(props) => props.theme.pointColor};
-  margin-bottom: 30px;
-
-  transform: translatex(
-    ${(props) => props.offsetY > 230 && props.offsetY * 1}px
-  );
-  transition: all 500ms ease-out;
-
-  @media ${(props) => props.theme.tabletMedium} {
-    font-size: 150px;
-    position: relative;
-    left: -18%;
-  }
-`;
-
-const Desc = styled.p`
-  font-weight: 300;
-  font-size: 30px;
-
-  transform: translatex(
-    -${(props) => props.offsetY > 310 && props.offsetY * 1}px
-  );
   transition: all 500ms ease-out;
 
   @media ${(props) => props.theme.tabletMedium} {
     font-size: 150px;
     position: relative;
     right: -15%;
+  }
+`;
+
+const DescTitle = styled(Desc).attrs((props) => ({
+  style: {
+    transform: `translateX(-${props.offsetY > 300 ? props.offsetY * 1 : 0}px)`,
+  },
+}))`
+  color: ${(props) => props.theme.pointColor};
+  margin-bottom: 30px;
+
+  @media ${(props) => props.theme.tabletMedium} {
+    right: 18%;
   }
 `;
 

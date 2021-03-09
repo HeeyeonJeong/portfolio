@@ -10,12 +10,24 @@ const HeaderBox = styled.header`
   align-items: center;
   height: 60px;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  @media ${(props) => props.theme.tabletMedium} {
+    position: absolute;
+  }
 `;
 
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontXL};
   position: relative;
   top: 2px;
+
+  @media ${(props) => props.theme.tabletMedium} {
+    left: -30px;
+  }
 `;
 
 const ResumeLink = styled.a`

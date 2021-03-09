@@ -37,6 +37,10 @@ const marginSize = {
   marginXXL: "50px",
 };
 
+const ColorTools = {
+  pointColor: "#f54404",
+};
+
 // color switch
 const lightTheme = {
   bgColor: "#F1EFED",
@@ -53,6 +57,7 @@ export const theme = {
   ...fontSize,
   ...paddingSize,
   ...marginSize,
+  ...ColorTools,
   lightTheme,
   darkTheme,
 };

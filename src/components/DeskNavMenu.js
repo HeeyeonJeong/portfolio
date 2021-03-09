@@ -19,6 +19,7 @@ const NavBox = styled.div`
   right: 0;
   transform: translateY(-50%);
   margin-right: ${(props) => props.theme.marginM};
+  z-index: 15;
 `;
 
 const List = styled.li`

@@ -11,12 +11,12 @@ const Icon = styled.button`
 `;
 
 const SlideBox = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 10;
+  height: 100vh;
+  z-index: 15;
   background-color: ${(props) => props.mode};
   display: flex;
   flex-direction: column;

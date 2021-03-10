@@ -36,8 +36,6 @@ const TitleName = styled(Title).attrs((props) => ({
     transform: `translateX(${props.offsetY > 180 ? props.offsetY * 1.5 : 0}px)`,
   },
 }))`
-  color: ${(props) => props.theme.pointColor};
-
   @media ${(props) => props.theme.tabletMedium} {
     left: 9%;
   }
@@ -64,7 +62,6 @@ const DescTitle = styled(Desc).attrs((props) => ({
     transform: `translateX(-${props.offsetY > 300 ? props.offsetY * 1 : 0}px)`,
   },
 }))`
-  color: ${(props) => props.theme.pointColor};
   margin-bottom: 30px;
 
   @media ${(props) => props.theme.tabletMedium} {

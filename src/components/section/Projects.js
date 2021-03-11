@@ -11,9 +11,6 @@ const Section = styled.section`
 
   margin: ${(props) => props.theme.marginL} 0;
   padding: ${(props) => props.theme.paddingL};
-
-  @media ${(props) => props.theme.tabletMedium} {
-  }
 `;
 
 const Title = styled.h2`

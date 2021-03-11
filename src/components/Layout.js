@@ -7,6 +7,7 @@ import Home from "./section/Home";
 import DeskNavMenu from "./DeskNavMenu";
 import About from "./section/About";
 import Projects from "./section/Projects";
+import Contact from "./section/Contact";
 
 function Layout() {
   const [isVisible, setVisible] = useState(true);
@@ -32,6 +33,7 @@ function Layout() {
         <Home />
         <About />
         <Projects />
+        <Contact />
       </main>
       <Footer />
     </>

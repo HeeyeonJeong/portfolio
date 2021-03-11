@@ -100,6 +100,7 @@ const FolderBtn = styled.button`
 const DescBox = styled.div`
   padding: ${(props) => props.theme.paddingS};
   @media ${(props) => props.theme.deskTop} {
+    /* 여기 기능 넣고 수정할 것 */
     opacity: 1;
   }
 `;

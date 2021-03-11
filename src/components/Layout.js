@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Home from "./section/Home";
 import DeskNavMenu from "./DeskNavMenu";
 import About from "./section/About";
+import Projects from "./section/Projects";
 
 function Layout() {
   const [isVisible, setVisible] = useState(true);
@@ -30,6 +31,7 @@ function Layout() {
       <main onWheel={handleScroll}>
         <Home />
         <About />
+        <Projects />
       </main>
       <Footer />
     </>

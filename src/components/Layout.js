@@ -8,6 +8,7 @@ import DeskNavMenu from "./DeskNavMenu";
 import About from "./section/About";
 import Projects from "./section/Projects";
 import Contact from "./section/Contact";
+import AutoScrollUp from "./AutoScrollUp";
 
 function Layout() {
   const [isVisible, setVisible] = useState(true);
@@ -29,6 +30,7 @@ function Layout() {
     <>
       <Header />
       {isTabletUp && <DeskNavMenu isVisible={isVisible} />}
+      <AutoScrollUp isVisible={isVisible} />
       <main onWheel={handleScroll}>
         <Home />
         <About />

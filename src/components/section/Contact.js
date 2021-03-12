@@ -6,7 +6,6 @@ import MessageForm from "../MessageForm";
 
 const Section = styled.section`
   min-height: 100vh;
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;

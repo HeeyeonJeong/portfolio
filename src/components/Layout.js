@@ -12,6 +12,7 @@ import AutoScrollUp from "./AutoScrollUp";
 
 function Layout() {
   const [isVisible, setVisible] = useState(true);
+  const [isScrollUp, setIsScrollUp] = useState(false);
 
   const isTabletUp = useMediaQuery({
     query: "(min-width:1024px)",
@@ -21,8 +22,10 @@ function Layout() {
     const scrollMode = e.deltaY;
     if (scrollMode > 0) {
       setVisible(false);
+      setIsScrollUp(false);
     } else {
       setVisible(true);
+      setIsScrollUp(true);
     }
   };
 
@@ -30,7 +33,7 @@ function Layout() {
     <>
       <Header />
       {isTabletUp && <DeskNavMenu isVisible={isVisible} />}
-      <AutoScrollUp isVisible={isVisible} />
+      <AutoScrollUp isScrollUp={isScrollUp} />
       <main onWheel={handleScroll}>
         <Home />
         <About />

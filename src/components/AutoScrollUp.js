@@ -18,17 +18,17 @@ const ButtonBox = styled.button`
   right: 0;
   bottom: 5%;
   margin: 0 ${(props) => props.theme.marginL};
-  display: ${(props) => (props.isVisible === true ? "block" : "none")};
+  display: ${(props) => (props.isScrollUp === true ? "block" : "none")};
   animation: ${fadeIn} 0.8s;
 `;
 
-function AutoScrollUp({ isVisible }) {
+function AutoScrollUp({ isScrollUp }) {
   const handleTop = () => {
     window.scrollTo(0, 0);
   };
 
   return (
-    <ButtonBox isVisible={isVisible} onClick={handleTop}>
+    <ButtonBox isScrollUp={isScrollUp} onClick={handleTop}>
       <IoIcons.IoIosArrowDropupCircle />
     </ButtonBox>
   );

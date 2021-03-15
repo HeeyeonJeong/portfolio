@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
-import styled, { css } from "styled-components";
-import { ThemeContext } from "../../context/ThemeContext";
+import React, { useState } from "react";
+import styled from "styled-components";
+import ButtonTheme from "../ButtonTheme";
 import Project from "../Project";
 
 const Section = styled.section`
@@ -24,39 +24,6 @@ const Title = styled.h2`
   }
 `;
 
-const FoldButton = styled.button`
-  cursor: pointer;
-  padding: ${(props) => props.theme.paddingS};
-  border: 1px solid;
-  border-radius: 5px;
-  transition: 100ms all ease-out;
-  margin-bottom: ${(props) => props.theme.marginXL};
-
-  ${(props) =>
-    props.bgColor === "#181818"
-      ? css`
-          background-color: #f1efed;
-          color: #181818;
-          :hover {
-            background-color: #181818;
-            color: #f1efed;
-          }
-        `
-      : css`
-          background-color: #181818;
-          color: #f1efed;
-
-          :hover {
-            color: #181818;
-            background-color: #f1efed;
-          }
-        `}
-
-  @media ${(props) => props.theme.tabletSmall} {
-    width: 150px;
-  }
-`;
-
 const ProjectsTotal = styled.div`
   display: flex;
   width: 100%;
@@ -65,21 +32,18 @@ const ProjectsTotal = styled.div`
 `;
 
 function Projects() {
-  const colorMode = useContext(ThemeContext);
-
   const [total, setTotal] = useState(true);
 
   return (
     <Section id="projects">
       <Title>Projects</Title>
-      <FoldButton
+      <ButtonTheme
         onClick={() => {
           setTotal(!total);
         }}
-        bgColor={colorMode.mode.bgColor}
       >
         {total ? "간단히 보기" : "자세히 보기"}
-      </FoldButton>
+      </ButtonTheme>
       <ProjectsTotal>
         <Project
           total={total}

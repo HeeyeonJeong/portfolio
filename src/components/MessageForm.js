@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { useInput } from "../hooks/useInput";
 import { send } from "emailjs-com";
-import { ThemeContext } from "../context/ThemeContext";
+import ButtonTheme from "./ButtonTheme";
 
 export const useId = process.env.REACT_APP_USER_ID;
 export const templateId = process.env.REACT_APP_TEMPLATE_ID;
@@ -47,37 +47,16 @@ const MessageInput = styled.textarea`
   border-radius: 5px;
 `;
 
-const Button = styled.button`
-  cursor: pointer;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: ${(props) => props.theme.paddingS};
-  transition: 100ms all ease-out;
-
-  ${(props) =>
-    props.bgColor === "#181818"
-      ? css`
-          :hover {
-            color: #181818;
-            background-color: white;
-          }
-        `
-      : css`
-          :hover {
-            background-color: black;
-            color: #f1efed;
-          }
-        `}
+const SendButton = styled(ButtonTheme)`
+  width: 100%;
+  margin: 0 auto;
 
   @media ${(props) => props.theme.tabletSmall} {
-    width: 50%;
-    margin: 0 auto;
+    width: 40%;
   }
 `;
 
 function MessageForm() {
-  const colorMode = useContext(ThemeContext);
-
   const [{ name, email, message }, onChange, reset] = useInput({
     name: "",
     email: "",
@@ -127,9 +106,7 @@ function MessageForm() {
         required
         placeholder="내용을 입력해주세요."
       ></MessageInput>
-      <Button type="submit" bgColor={colorMode.mode.bgColor}>
-        메일 보내기
-      </Button>
+      <SendButton type="submit">메일 보내기</SendButton>
     </FormBox>
   );
 }

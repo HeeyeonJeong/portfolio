@@ -86,7 +86,7 @@ function Contact() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              https://github.com/HeeyeonJeong
+              github.com/HeeyeonJeong
             </a>
           </Info>
           <Info>
@@ -98,7 +98,7 @@ function Contact() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              https://heeyeonjeong.tistory.com
+              heeyeonjeong.tistory.com
             </a>
           </Info>
         </InfoBox>

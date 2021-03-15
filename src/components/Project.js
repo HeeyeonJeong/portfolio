@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import * as FaIcons from "react-icons/fa";
 import * as BiIcons from "react-icons/bi";
@@ -93,19 +93,26 @@ const Bottom = styled.div`
 `;
 
 const FolderBtn = styled.button`
+  cursor: pointer;
   padding: ${(props) => props.theme.paddingS};
   font-size: ${(props) => props.theme.fontL};
 `;
 
 const DescBox = styled.div`
   padding: ${(props) => props.theme.paddingS};
-  @media ${(props) => props.theme.deskTop} {
-    /* 여기 기능 넣고 수정할 것 */
-    opacity: 1;
-  }
 `;
 
-function Project({ title, demo, stacks, desc }) {
+function Project({ total, title, demo, stacks, desc }) {
+  const [open, setOpen] = useState(total);
+
+  const handleAccordion = () => {
+    setOpen(!open);
+  };
+
+  useEffect(() => {
+    setOpen(total);
+  }, [total]);
+
   return (
     <ProjectBox>
       <Image>
@@ -143,12 +150,12 @@ function Project({ title, demo, stacks, desc }) {
                 </a>
               </li>
             </LinkBox>
-            <FolderBtn type="button">
-              <HiIcons.HiChevronDown />
+            <FolderBtn type="button" onClick={handleAccordion}>
+              {open ? <HiIcons.HiChevronDown /> : <HiIcons.HiChevronUp />}
             </FolderBtn>
           </Bottom>
         </div>
-        <DescBox>{desc}</DescBox>
+        {open && <DescBox>{desc}</DescBox>}
       </ProjectInfo>
     </ProjectBox>
   );

@@ -13,11 +13,11 @@ const Button = styled.button`
   ${(props) =>
     props.bgColor === "#181818"
       ? css`
-          background-color: #f1efed;
+          background-color: white;
           color: #181818;
           :hover {
             background-color: #181818;
-            color: #f1efed;
+            color: white;
           }
         `
       : css`

@@ -99,6 +99,8 @@ const FolderBtn = styled.button`
 `;
 
 const DescBox = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 2;
   padding: ${(props) => props.theme.paddingS};
 `;
 

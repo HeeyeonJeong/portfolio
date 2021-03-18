@@ -27,6 +27,7 @@ const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   @media ${(props) => props.theme.deskTop} {
     flex-direction: row;
@@ -63,7 +64,7 @@ const Info = styled.div`
 `;
 
 const Desc = styled.p`
-  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
   padding-bottom: ${(props) => props.theme.paddingL};
   margin: ${(props) => props.theme.paddingL};
   border-bottom: 1px solid;
@@ -92,12 +93,15 @@ function About() {
         </Image>
         <Info>
           <Desc>
-            안녕하세요. 정희연입니다. 수정 전 코드가 적용된 경우 스크롤이 발생할
-            때마다 태그의 클래스네임이 계속 바뀌는 현상이 있었는데, 수정 후
-            코드가 적용되었을 때는 태그의 style을 직접 부여하게되어 스크롤시
-            tranform 값만 변동되어 클래스네임은 변하지 않았다.안녕하세요.
-            정희연입니다. 수정 전 코드가 적용된 경우 스크롤이 발생할 때마다
-            태그의 클래스네임이 계속 바뀌는 현상이 있었는데, 수정 후
+            <span> 안녕하세요, 프론트엔드 개발자 정희연입니다.</span>
+            <br />
+            <br />
+            <span>
+              ✅ 배움을 즐기고 새로운 지식을 얻는 것을 좋아하는 열정파입니다.
+              <br />✅ 스스로의 성장을 위한 의지와 집념이 강합니다.
+              <br />✅ 개발시 새롭게 얻은 지식이나 문제 해결 방식을 블로그에
+              기록하며 공부하고 있습니다.
+            </span>
           </Desc>
           <SkillBox>
             <Skill skill={"Javascript"} />

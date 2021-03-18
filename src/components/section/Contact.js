@@ -35,12 +35,22 @@ const ContactItem = styled.div`
   }
 `;
 
-const InfoBox = styled.ul`
+const InfoBox = styled.div`
   text-align: center;
   margin-bottom: ${(props) => props.theme.marginL};
 
   @media ${(props) => props.theme.deskTop} {
     width: 40%;
+  }
+`;
+
+const InfoTop = styled.p`
+  color: ${(props) => props.theme.pointColor};
+  margin-bottom: ${(props) => props.theme.marginL};
+  text-align: center;
+
+  @media ${(props) => props.theme.tabletSmall} {
+    margin-bottom: ${(props) => props.theme.marginXXL};
   }
 `;
 
@@ -71,36 +81,43 @@ function Contact() {
       <Title>Contact</Title>
       <ContactItem>
         <InfoBox>
-          <Info>
-            <p>
-              <FiIcons.FiMail /> Mail
-            </p>
-            <a href="mailto:junghy14971@gmail.com">junghy14971@gmail.com</a>
-          </Info>
-          <Info>
-            <p>
-              <FaIcons.FaGithubSquare /> GitHub
-            </p>
-            <a
-              href="https://github.com/HeeyeonJeong"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              github.com/HeeyeonJeong
-            </a>
-          </Info>
-          <Info>
-            <p>
-              <FaIcons.FaBlogger /> Blog
-            </p>
-            <a
-              href="https://heeyeonjeong.tistory.com"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              heeyeonjeong.tistory.com
-            </a>
-          </Info>
+          <InfoTop>
+            어떠한 말씀도 소중하게 담고 배우겠습니다.
+            <br />
+            사소한 의견도 감사히 받겠습니다.
+          </InfoTop>
+          <ul>
+            <Info>
+              <p>
+                <FiIcons.FiMail /> Mail
+              </p>
+              <a href="mailto:junghy14971@gmail.com">junghy14971@gmail.com</a>
+            </Info>
+            <Info>
+              <p>
+                <FaIcons.FaGithubSquare /> GitHub
+              </p>
+              <a
+                href="https://github.com/HeeyeonJeong"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                github.com/HeeyeonJeong
+              </a>
+            </Info>
+            <Info>
+              <p>
+                <FaIcons.FaBlogger /> Blog
+              </p>
+              <a
+                href="https://heeyeonjeong.tistory.com"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                heeyeonjeong.tistory.com
+              </a>
+            </Info>
+          </ul>
         </InfoBox>
         <MessageForm />
       </ContactItem>

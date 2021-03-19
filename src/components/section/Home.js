@@ -26,7 +26,7 @@ const Title = styled.h2.attrs((props) => ({
 
   @media ${(props) => props.theme.tabletMedium} {
     position: relative;
-    left: -7%;
+    left: -1%;
     font-size: 200px;
   }
 `;
@@ -35,11 +35,7 @@ const TitleName = styled(Title).attrs((props) => ({
   style: {
     transform: `translateX(${props.offsetY > 180 ? props.offsetY * 1.5 : 0}px)`,
   },
-}))`
-  @media ${(props) => props.theme.tabletMedium} {
-    left: 9%;
-  }
-`;
+}))``;
 
 const Desc = styled.p.attrs((props) => ({
   style: {
@@ -53,7 +49,6 @@ const Desc = styled.p.attrs((props) => ({
   @media ${(props) => props.theme.tabletMedium} {
     font-size: 150px;
     position: relative;
-    right: -15%;
   }
 `;
 
@@ -63,10 +58,6 @@ const DescTitle = styled(Desc).attrs((props) => ({
   },
 }))`
   margin-bottom: 30px;
-
-  @media ${(props) => props.theme.tabletMedium} {
-    right: 18%;
-  }
 `;
 
 function Home() {

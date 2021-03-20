@@ -52,7 +52,15 @@ function Header() {
       <Title>
         <a href="/">HY.</a>
       </Title>
-      {isTabletDown || <ResumeLink href="#">Resume</ResumeLink>}
+      {isTabletDown || (
+        <ResumeLink
+          href="https://drive.google.com/file/d/1xBYNJMW9r-OGluH5B7zraun5YvV1QoEs/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Resume
+        </ResumeLink>
+      )}
     </HeaderBox>
   );
 }

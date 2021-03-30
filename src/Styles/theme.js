@@ -1,4 +1,4 @@
-// Media query breakpoints (mobile-first)
+// Media query breakpoints
 const size = {
   mobile: "320px",
   TabletS: "768px",

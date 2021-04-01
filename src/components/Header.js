@@ -54,7 +54,7 @@ function Header() {
       </Title>
       {isTabletDown || (
         <ResumeLink
-          href="https://drive.google.com/file/d/1-WPgGVrXPLX1THWtkErSBDwo5Nbo_9V7/view?usp=sharing"
+          href="https://drive.google.com/file/d/1JvFDL2eYwapJndFBybV4M-XG_NhXh-Qz/view?usp=sharing"
           target="_blank"
           rel="noreferrer noopener"
         >

@@ -52,7 +52,7 @@ function Header() {
       <Title>
         <a href="/">HY.</a>
       </Title>
-      {isTabletDown || (
+      {/* {isTabletDown || (
         <ResumeLink
           href="https://drive.google.com/file/d/1JvFDL2eYwapJndFBybV4M-XG_NhXh-Qz/view?usp=sharing"
           target="_blank"
@@ -60,7 +60,7 @@ function Header() {
         >
           Resume
         </ResumeLink>
-      )}
+      )} */}
     </HeaderBox>
   );
 }
